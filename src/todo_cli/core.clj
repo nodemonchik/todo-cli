@@ -1,6 +1,8 @@
-(ns todo-cli.core)
+(ns todo-cli.core
+  (:require [clojure.tools.cli :refer [cli]])
+  (:gen-class))
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
+(defn -main [& args]
+  (def data (read-line))
+  (def input (java.util.Scanner. data))
+  (println (.next input)))
